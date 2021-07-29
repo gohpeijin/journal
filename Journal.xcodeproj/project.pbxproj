@@ -66,20 +66,44 @@
 		037FD78926B1489900CFC18F /* Journal */ = {
 			isa = PBXGroup;
 			children = (
+				039206CA26B260DA004D9259 /* EditDate */,
+				039206C926B260BE004D9259 /* EditEmotion */,
+				039206C826B260A3004D9259 /* AddJournal */,
+				037FD79626B148CA00CFC18F /* Info.plist */,
 				037FD78A26B1489900CFC18F /* AppDelegate.swift */,
 				037FD78C26B1489900CFC18F /* ViewController.swift */,
-				037FD78E26B1489900CFC18F /* Main.storyboard */,
-				037FD7A426B1D9B800CFC18F /* EmotionTableViewCell.swift */,
-				037FD7A526B1D9B800CFC18F /* EmotionTableViewCell.xib */,
 				037FD79126B148CA00CFC18F /* Assets.xcassets */,
 				037FD79326B148CA00CFC18F /* LaunchScreen.storyboard */,
-				037FD79626B148CA00CFC18F /* Info.plist */,
-				037FD79C26B156ED00CFC18F /* AddJournalViewController.swift */,
-				037FD79E26B1582700CFC18F /* EditDateViewController.swift */,
-				037FD7A026B1583500CFC18F /* EditEmotionViewController.swift */,
-				037FD7A226B1BB6B00CFC18F /* Emotions.plist */,
+				037FD78E26B1489900CFC18F /* Main.storyboard */,
 			);
 			path = Journal;
+			sourceTree = "<group>";
+		};
+		039206C826B260A3004D9259 /* AddJournal */ = {
+			isa = PBXGroup;
+			children = (
+				037FD79C26B156ED00CFC18F /* AddJournalViewController.swift */,
+			);
+			path = AddJournal;
+			sourceTree = "<group>";
+		};
+		039206C926B260BE004D9259 /* EditEmotion */ = {
+			isa = PBXGroup;
+			children = (
+				037FD7A226B1BB6B00CFC18F /* Emotions.plist */,
+				037FD7A026B1583500CFC18F /* EditEmotionViewController.swift */,
+				037FD7A426B1D9B800CFC18F /* EmotionTableViewCell.swift */,
+				037FD7A526B1D9B800CFC18F /* EmotionTableViewCell.xib */,
+			);
+			path = EditEmotion;
+			sourceTree = "<group>";
+		};
+		039206CA26B260DA004D9259 /* EditDate */ = {
+			isa = PBXGroup;
+			children = (
+				037FD79E26B1582700CFC18F /* EditDateViewController.swift */,
+			);
+			path = EditDate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

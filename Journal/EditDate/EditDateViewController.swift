@@ -25,6 +25,7 @@ class EditDateViewController: UIViewController {
         let addJournalVC = presentingViewController as! AddJournalViewController
         addJournalVC.labelDate.text = dateFormatter.string(from: datePicker.date)
         
+//        self.navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
     }
     

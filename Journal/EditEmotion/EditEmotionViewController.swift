@@ -47,6 +47,7 @@ class EditEmotionViewController: UIViewController {
                     // print values of array
                     if let emotions = emotions {
                         emotionList = emotions
+                        emotionList = emotionList.sorted()
                     }
                 } catch {
                     print("Error serializing data from property list")
@@ -94,7 +95,7 @@ extension EditEmotionViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: EmotionTableViewCell.identifier, for: indexPath) as! EmotionTableViewCell
         
         let backgroundview = UIView()
-        backgroundview.backgroundColor = UIColor.init(red: 0/255, green: 100/255, blue: 0/255, alpha: 0.5)
+        backgroundview.backgroundColor = UIColor.init(red: 81/255, green: 194/255, blue: 175/255, alpha: 0.2)
         cell.selectedBackgroundView = backgroundview
         
         let resultList = (searching ? searchEmotion : emotionList)

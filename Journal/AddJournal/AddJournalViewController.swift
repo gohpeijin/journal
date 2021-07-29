@@ -16,6 +16,7 @@ class AddJournalViewController: UIViewController {
     @IBOutlet weak var imageEmotionSelected: UIImageView!
     @IBOutlet weak var labelEmotionSelected: UILabel!
 
+    @IBOutlet weak var textViewThought: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,9 @@ class AddJournalViewController: UIViewController {
         dateFormatter.dateFormat="dd MMM yyyy"
         labelDate.text = dateFormatter.string(from: now)
     }
+    
+//    func feat
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEditDate"{
             let editDateVC = segue.destination as! EditDateViewController
