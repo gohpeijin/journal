@@ -72,7 +72,7 @@ extension EditEmotionViewController: UITableViewDelegate{
         let selectedEmotion = resultList[indexPath.row]
         let addJournalVC = presentingViewController as! AddJournalViewController
         addJournalVC.labelEmotionSelected.text = selectedEmotion
-        addJournalVC.imageEmotionSelected.image = UIImage(named: selectedEmotion)
+        addJournalVC.imageEmotionSelected.image = UIImage(named: selectedEmotion.lowercased())
         
         self.dismiss(animated: true, completion: nil)
     }
@@ -103,7 +103,7 @@ extension EditEmotionViewController: UITableViewDataSource{
         
         let selectedEmotion = resultList[indexPath.row]
         cell.labelEmotionName.text = selectedEmotion
-        cell.imageEmotion.image = UIImage(named: selectedEmotion)
+        cell.imageEmotion.image = UIImage(named: selectedEmotion.lowercased())
         return cell
     }
 }

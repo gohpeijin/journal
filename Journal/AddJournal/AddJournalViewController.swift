@@ -13,7 +13,10 @@ class AddJournalViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var buttonSubmit: UIButton!
     @IBOutlet weak var labelDate: UILabel!
     let dateFormatter = DateFormatter()
+    let now = Date()
+//    var journal:JournalRecord?
     
+    @IBOutlet weak var labelEmptyThought: UILabel!
     @IBOutlet weak var imageEmotionSelected: UIImageView!
     @IBOutlet weak var labelEmotionSelected: UILabel!
 
@@ -32,6 +35,7 @@ class AddJournalViewController: UIViewController, UITextViewDelegate {
         textViewThought.becomeFirstResponder()
         textViewDefaultState()
         
+        labelEmptyThought.isHidden = true
         buttonSubmit.layer.borderColor = UIColor.init(red: 32/255, green: 176/255, blue: 156/255, alpha: 1).cgColor // popup ok buttong effect
         
     }
@@ -49,6 +53,7 @@ class AddJournalViewController: UIViewController, UITextViewDelegate {
     
     // add placeholder to the text view, show it when empty string even is selected
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        labelEmptyThought.isHidden = true
         let currentText: String = textViewThought.text
         let updatedText = ( currentText as NSString).replacingCharacters(in: range, with: text)
         
@@ -61,11 +66,16 @@ class AddJournalViewController: UIViewController, UITextViewDelegate {
         }
         else
         {
-            return true
+            return self.textLimit(existingText: textView.text,newText: text,limit: 1000)
         }
         return false
     }
-    
+    // set the text limit to 1000 character
+    private func textLimit(existingText: String?, newText: String,limit: Int) -> Bool {
+        let text = existingText ?? ""
+        let isAtLimit = text.count + newText.count <= limit
+        return isAtLimit
+    }
     func textViewDidChangeSelection(_ textView: UITextView) {
         if self.view.window != nil{
             if textViewThought.textColor == UIColor.lightGray{
@@ -75,11 +85,28 @@ class AddJournalViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDefaultState(){
-        textViewThought.text = "Type your thought here..."
+        textViewThought.text = "Type your thought here... (max 1000 characters)"
         textViewThought.textColor = UIColor.lightGray
         textViewThought.selectedTextRange = textViewThought.textRange(from: textViewThought.beginningOfDocument, to: textViewThought.beginningOfDocument)
     }
     
+   
+    
+    @IBAction func submitPressed(_ sender: UIButton) {
+        if textViewThought.textColor == UIColor.lightGray{
+            labelEmptyThought.isHidden = false
+        }
+        else{
+            let addedJournal = JournalRecord(emotion: labelEmotionSelected.text!,thought: textViewThought.text,date: labelDate.text!)
+            
+            let journalRecordVC = presentingViewController as! JournalRecordViewController
+            journalRecordVC.journalRecords.append(addedJournal)
+            journalRecordVC.noRecordView.isHidden = true
+            journalRecordVC.journalTableView.reloadData()
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+    }
     
     @IBAction func backPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
