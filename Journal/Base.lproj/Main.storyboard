@@ -190,8 +190,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0rc-wb-raR">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0rc-wb-raR">
                                 <rect key="frame" x="47" y="340" width="320" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="9N8-Cg-KSw"/>
+                                </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="649155102.90249395">
                                     <!--2021-07-28 08:51:42 +0000-->
                                 </date>
@@ -233,7 +236,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjq-r4-4BH">
-                                <rect key="frame" x="150" y="617" width="114" height="40"/>
+                                <rect key="frame" x="150" y="630" width="114" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="YZI-ON-soO"/>
                                 </constraints>
@@ -264,8 +267,8 @@
                             <constraint firstItem="Xjq-r4-4BH" firstAttribute="leading" secondItem="OWm-8w-FhE" secondAttribute="leading" constant="150" id="WDP-Wf-5M6"/>
                             <constraint firstItem="OWm-8w-FhE" firstAttribute="trailing" secondItem="Xjq-r4-4BH" secondAttribute="trailing" constant="150" id="Xht-ga-TZV"/>
                             <constraint firstItem="ILu-gv-nos" firstAttribute="top" secondItem="OWm-8w-FhE" secondAttribute="top" constant="20" id="alX-pm-jMT"/>
-                            <constraint firstItem="Xjq-r4-4BH" firstAttribute="top" secondItem="0rc-wb-raR" secondAttribute="bottom" constant="44" id="e5M-Mj-Vty"/>
                             <constraint firstItem="zhe-Tf-qHu" firstAttribute="leading" secondItem="OWm-8w-FhE" secondAttribute="leading" id="ikj-cx-Vet"/>
+                            <constraint firstItem="Xjq-r4-4BH" firstAttribute="top" secondItem="0rc-wb-raR" secondAttribute="bottom" constant="40" id="w9P-jX-01z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OWm-8w-FhE"/>
                     </view>
