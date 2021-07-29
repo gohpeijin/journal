@@ -66,11 +66,16 @@ class AddJournalViewController: UIViewController, UITextViewDelegate {
         }
         else
         {
-            return true
+            return self.textLimit(existingText: textView.text,newText: text,limit: 1000)
         }
         return false
     }
-    
+    // set the text limit to 1000 character
+    private func textLimit(existingText: String?, newText: String,limit: Int) -> Bool {
+        let text = existingText ?? ""
+        let isAtLimit = text.count + newText.count <= limit
+        return isAtLimit
+    }
     func textViewDidChangeSelection(_ textView: UITextView) {
         if self.view.window != nil{
             if textViewThought.textColor == UIColor.lightGray{
@@ -80,11 +85,12 @@ class AddJournalViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDefaultState(){
-        textViewThought.text = "Type your thought here..."
+        textViewThought.text = "Type your thought here... (max 1000 characters)"
         textViewThought.textColor = UIColor.lightGray
         textViewThought.selectedTextRange = textViewThought.textRange(from: textViewThought.beginningOfDocument, to: textViewThought.beginningOfDocument)
     }
     
+   
     
     @IBAction func submitPressed(_ sender: UIButton) {
         if textViewThought.textColor == UIColor.lightGray{
@@ -95,7 +101,7 @@ class AddJournalViewController: UIViewController, UITextViewDelegate {
             
             let journalRecordVC = presentingViewController as! JournalRecordViewController
             journalRecordVC.journalRecords.append(addedJournal)
-            
+            journalRecordVC.noRecordView.isHidden = true
             journalRecordVC.journalTableView.reloadData()
             self.dismiss(animated: true, completion: nil)
         }

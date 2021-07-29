@@ -11,6 +11,7 @@ import UIKit
 class JournalTableViewCell: UITableViewCell {
 
     
+    @IBOutlet weak var backgroundCardView: UIView!
     @IBOutlet weak var labelThought: UILabel!
     @IBOutlet weak var labelEmotion: UILabel!
     @IBOutlet weak var imageEmotion: UIImageView!
@@ -20,9 +21,16 @@ class JournalTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setColor()
     }
 
+    
+    func setColor(){
+        backgroundCardView.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        
+        backgroundCardView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        backgroundCardView.layer.shadowOpacity = 0.8
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
