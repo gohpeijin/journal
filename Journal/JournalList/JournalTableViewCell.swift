@@ -17,27 +17,25 @@ class JournalTableViewCell: UITableViewCell {
     @IBOutlet weak var imageEmotion: UIImageView!
     @IBOutlet weak var labelDate: UILabel!
     
-    static let identifier = "JournalTableViewCell"
+    static let identifier = "JournalTableViewCell" // for register the cell
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setColor()
+        setShadowColorofCardView()
     }
 
-    
-    func setColor(){
+    func setShadowColorofCardView(){
         backgroundCardView.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
-        
         backgroundCardView.layer.shadowOffset = CGSize(width: 0, height: 0)
         backgroundCardView.layer.shadowOpacity = 0.8
     }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
-    // fore register the cell
+    // for register the cell
     static func nib() -> UINib {
         return UINib(nibName: "JournalTableViewCell", bundle: nil)
     }

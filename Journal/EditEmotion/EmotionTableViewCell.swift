@@ -13,21 +13,18 @@ class EmotionTableViewCell: UITableViewCell {
     @IBOutlet weak var imageEmotion: UIImageView!
     @IBOutlet weak var labelEmotionName: UILabel!
     
-    static let identifier = "EmotionTableViewCell"
+    static let identifier = "EmotionTableViewCell" // for register the cell
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-     
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
-    // fore register the cell
+    // for register the cell
     static func nib() -> UINib {
         return UINib(nibName: "EmotionTableViewCell", bundle: nil)
     }

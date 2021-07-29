@@ -13,23 +13,29 @@ class EditDateViewController: UIViewController {
     @IBOutlet weak var buttonSave: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     let dateFormatter = DateFormatter()
-    var dateSelected: String!
+    var dateSelected: String! // use to pass the addJounalViewController's date to this view
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        buttonSave.layer.borderColor = UIColor.init(red: 32/255, green: 176/255, blue: 156/255, alpha: 1).cgColor // popup ok buttong effect
+        // button border effect
+        buttonSave.layer.borderColor = UIColor.init(red: 32/255, green: 176/255, blue: 156/255, alpha: 1).cgColor
         
+        // set the maximum date to now
         let now = Date()
         datePicker.maximumDate = now
+        
+        // set the datepicker's date to addJounalViewController's date
         dateFormatter.dateFormat = "dd MMM yyyy"
         datePicker.setDate(dateFormatter.date(from: dateSelected!)!, animated: true)
     }
     
     @IBAction func savePressed(_ sender: UIButton) {
+        // set the date in addJounalViewController to the selected date
         let addJournalVC = presentingViewController as! AddJournalViewController
         addJournalVC.labelDate.text = dateFormatter.string(from: datePicker.date)
-        
-//        self.navigationController?.popViewController(animated: true)
+
+//        self.navigationController?.popViewController(animated: true) // for navigation view
         self.dismiss(animated: true, completion: nil)
     }
     
