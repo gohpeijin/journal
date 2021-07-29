@@ -37,7 +37,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 Dec 2021" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn4-Aq-n1l">
-                        <rect key="frame" x="156" y="20" width="115" height="28"/>
+                        <rect key="frame" x="156" y="20" width="120" height="28"/>
                         <gestureRecognizers/>
                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                         <nil key="textColor"/>
@@ -65,7 +65,7 @@
                     <constraint firstAttribute="bottom" secondItem="TZw-Sc-KTa" secondAttribute="bottom" constant="10" id="Bcd-bq-mtt"/>
                     <constraint firstAttribute="trailing" secondItem="TZw-Sc-KTa" secondAttribute="trailing" constant="10" id="IKd-t5-3Bb"/>
                     <constraint firstAttribute="trailing" secondItem="Gx4-8F-fQC" secondAttribute="trailing" constant="30" id="PrT-Ml-CG3"/>
-                    <constraint firstAttribute="trailing" secondItem="xn4-Aq-n1l" secondAttribute="trailing" constant="143" id="Qgw-Lw-2pR"/>
+                    <constraint firstAttribute="trailing" secondItem="xn4-Aq-n1l" secondAttribute="trailing" constant="138" id="Qgw-Lw-2pR"/>
                     <constraint firstItem="lne-g1-j1d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="QkE-nM-21b"/>
                     <constraint firstItem="lne-g1-j1d" firstAttribute="top" secondItem="t8z-3J-mh2" secondAttribute="bottom" constant="3" id="SQu-8J-We8"/>
                     <constraint firstItem="TZw-Sc-KTa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="V7H-9t-FZN"/>
