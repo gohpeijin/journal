@@ -10,14 +10,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Journal Record View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="JournalRecordViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7ym-Oe-LhM">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                             <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1a-su-Sod">
                                 <rect key="frame" x="320" y="782" width="59" height="60"/>
                                 <state key="normal" image="add"/>
@@ -28,6 +32,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="7ym-Oe-LhM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9ZM-2K-OSF"/>
+                            <constraint firstItem="7ym-Oe-LhM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="A34-Y0-e9Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7ym-Oe-LhM" secondAttribute="bottom" id="IMT-sY-lh4"/>
+                            <constraint firstItem="7ym-Oe-LhM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TNJ-TK-hQF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="g1a-su-Sod" secondAttribute="bottom" constant="20" id="XYi-c6-sux"/>
                             <constraint firstItem="g1a-su-Sod" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="738" id="ixi-V6-SrM"/>
                             <constraint firstItem="g1a-su-Sod" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="320" id="pC9-rO-RAV"/>
@@ -35,6 +43,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="journalTableView" destination="7ym-Oe-LhM" id="UfN-cx-T2x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,7 +69,7 @@
                                     <outletCollection property="gestureRecognizers" destination="UR6-wm-Wty" appends="YES" id="7xy-9W-6tJ"/>
                                 </connections>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type your though here..." translatesAutoresizingMaskIntoConstraints="NO" id="aP1-Zv-3F4">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type your thought here..." translatesAutoresizingMaskIntoConstraints="NO" id="aP1-Zv-3F4">
                                 <rect key="frame" x="20" y="274" width="374" height="450"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -66,7 +77,7 @@
                                     <constraint firstAttribute="width" constant="374" id="MQH-OL-A68"/>
                                 </constraints>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -108,7 +119,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="3fI-LH-KjY" firstAttribute="leading" secondItem="CtV-D4-TJ0" secondAttribute="leading" id="6Uj-Io-BJl"/>
@@ -137,7 +147,16 @@
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="submitPressed:" destination="Qds-zG-ATO" eventType="touchUpInside" id="8Ot-YK-vIK"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* The thought cannot be empty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPh-Zu-LGz">
+                                <rect key="frame" x="30" y="729" width="165" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.99910014867782593" green="0.14807766675949097" blue="0.001439020736142993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -151,8 +170,10 @@
                             <constraint firstItem="XMk-fO-rew" firstAttribute="trailing" secondItem="CtV-D4-TJ0" secondAttribute="trailing" constant="339" id="G1h-O9-y3B"/>
                             <constraint firstItem="s4b-oG-iy0" firstAttribute="top" secondItem="XMk-fO-rew" secondAttribute="top" constant="20" id="Hbc-i8-DvM"/>
                             <constraint firstItem="aP1-Zv-3F4" firstAttribute="top" secondItem="CtV-D4-TJ0" secondAttribute="bottom" constant="10" id="Tl5-b6-cNS"/>
+                            <constraint firstItem="QPh-Zu-LGz" firstAttribute="leading" secondItem="XMk-fO-rew" secondAttribute="leading" constant="30" id="bFG-TG-faG"/>
                             <constraint firstAttribute="bottom" secondItem="CtV-D4-TJ0" secondAttribute="bottom" constant="632" id="boP-RN-aQa"/>
                             <constraint firstItem="CtV-D4-TJ0" firstAttribute="leading" secondItem="XMk-fO-rew" secondAttribute="leading" constant="20" id="d7d-2F-nCR"/>
+                            <constraint firstItem="QPh-Zu-LGz" firstAttribute="top" secondItem="aP1-Zv-3F4" secondAttribute="bottom" constant="5" id="dYZ-qG-MgI"/>
                             <constraint firstItem="CtV-D4-TJ0" firstAttribute="top" secondItem="XMk-fO-rew" secondAttribute="top" constant="145" id="dzN-4P-SPu"/>
                             <constraint firstItem="XMk-fO-rew" firstAttribute="trailing" secondItem="s4b-oG-iy0" secondAttribute="trailing" constant="25" id="iZ1-Zb-y4W"/>
                             <constraint firstItem="9zc-Od-IOS" firstAttribute="centerX" secondItem="dFm-3d-paT" secondAttribute="centerX" id="vjB-Ay-2Bp"/>
@@ -165,6 +186,7 @@
                         <outlet property="imageEmotionSelected" destination="yr5-fg-Fe1" id="lwL-VM-vRz"/>
                         <outlet property="labelDate" destination="9zc-Od-IOS" id="6hS-gB-SFO"/>
                         <outlet property="labelEmotionSelected" destination="3fI-LH-KjY" id="sDw-2L-fXf"/>
+                        <outlet property="labelEmptyThought" destination="QPh-Zu-LGz" id="zea-AZ-KT9"/>
                         <outlet property="textViewThought" destination="aP1-Zv-3F4" id="KQO-Dh-101"/>
                     </connections>
                 </viewController>

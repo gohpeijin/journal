@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		037FD78B26B1489900CFC18F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037FD78A26B1489900CFC18F /* AppDelegate.swift */; };
-		037FD78D26B1489900CFC18F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037FD78C26B1489900CFC18F /* ViewController.swift */; };
+		037FD78D26B1489900CFC18F /* JournalRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037FD78C26B1489900CFC18F /* JournalRecordViewController.swift */; };
 		037FD79026B1489900CFC18F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037FD78E26B1489900CFC18F /* Main.storyboard */; };
 		037FD79226B148CA00CFC18F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 037FD79126B148CA00CFC18F /* Assets.xcassets */; };
 		037FD79526B148CA00CFC18F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037FD79326B148CA00CFC18F /* LaunchScreen.storyboard */; };
@@ -18,12 +18,15 @@
 		037FD7A326B1BB6B00CFC18F /* Emotions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 037FD7A226B1BB6B00CFC18F /* Emotions.plist */; };
 		037FD7A626B1D9B800CFC18F /* EmotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037FD7A426B1D9B800CFC18F /* EmotionTableViewCell.swift */; };
 		037FD7A726B1D9B800CFC18F /* EmotionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037FD7A526B1D9B800CFC18F /* EmotionTableViewCell.xib */; };
+		039206CD26B2BA15004D9259 /* JournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039206CB26B2BA15004D9259 /* JournalTableViewCell.swift */; };
+		039206CE26B2BA15004D9259 /* JournalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 039206CC26B2BA15004D9259 /* JournalTableViewCell.xib */; };
+		039206D126B2DBBB004D9259 /* JournalRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039206D026B2DBBB004D9259 /* JournalRecord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		037FD78726B1489900CFC18F /* Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037FD78A26B1489900CFC18F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		037FD78C26B1489900CFC18F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		037FD78C26B1489900CFC18F /* JournalRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalRecordViewController.swift; sourceTree = "<group>"; };
 		037FD78F26B1489900CFC18F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		037FD79126B148CA00CFC18F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		037FD79426B148CA00CFC18F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,6 +37,9 @@
 		037FD7A226B1BB6B00CFC18F /* Emotions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Emotions.plist; sourceTree = "<group>"; };
 		037FD7A426B1D9B800CFC18F /* EmotionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionTableViewCell.swift; sourceTree = "<group>"; };
 		037FD7A526B1D9B800CFC18F /* EmotionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmotionTableViewCell.xib; sourceTree = "<group>"; };
+		039206CB26B2BA15004D9259 /* JournalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewCell.swift; sourceTree = "<group>"; };
+		039206CC26B2BA15004D9259 /* JournalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalTableViewCell.xib; sourceTree = "<group>"; };
+		039206D026B2DBBB004D9259 /* JournalRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalRecord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +72,12 @@
 		037FD78926B1489900CFC18F /* Journal */ = {
 			isa = PBXGroup;
 			children = (
+				039206CF26B2D68F004D9259 /* JournalList */,
 				039206CA26B260DA004D9259 /* EditDate */,
 				039206C926B260BE004D9259 /* EditEmotion */,
 				039206C826B260A3004D9259 /* AddJournal */,
 				037FD79626B148CA00CFC18F /* Info.plist */,
 				037FD78A26B1489900CFC18F /* AppDelegate.swift */,
-				037FD78C26B1489900CFC18F /* ViewController.swift */,
 				037FD79126B148CA00CFC18F /* Assets.xcassets */,
 				037FD79326B148CA00CFC18F /* LaunchScreen.storyboard */,
 				037FD78E26B1489900CFC18F /* Main.storyboard */,
@@ -104,6 +110,17 @@
 				037FD79E26B1582700CFC18F /* EditDateViewController.swift */,
 			);
 			path = EditDate;
+			sourceTree = "<group>";
+		};
+		039206CF26B2D68F004D9259 /* JournalList */ = {
+			isa = PBXGroup;
+			children = (
+				037FD78C26B1489900CFC18F /* JournalRecordViewController.swift */,
+				039206CB26B2BA15004D9259 /* JournalTableViewCell.swift */,
+				039206CC26B2BA15004D9259 /* JournalTableViewCell.xib */,
+				039206D026B2DBBB004D9259 /* JournalRecord.swift */,
+			);
+			path = JournalList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +184,7 @@
 				037FD79526B148CA00CFC18F /* LaunchScreen.storyboard in Resources */,
 				037FD79226B148CA00CFC18F /* Assets.xcassets in Resources */,
 				037FD7A726B1D9B800CFC18F /* EmotionTableViewCell.xib in Resources */,
+				039206CE26B2BA15004D9259 /* JournalTableViewCell.xib in Resources */,
 				037FD7A326B1BB6B00CFC18F /* Emotions.plist in Resources */,
 				037FD79026B1489900CFC18F /* Main.storyboard in Resources */,
 			);
@@ -179,10 +197,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				037FD78D26B1489900CFC18F /* ViewController.swift in Sources */,
+				037FD78D26B1489900CFC18F /* JournalRecordViewController.swift in Sources */,
 				037FD78B26B1489900CFC18F /* AppDelegate.swift in Sources */,
+				039206CD26B2BA15004D9259 /* JournalTableViewCell.swift in Sources */,
 				037FD79F26B1582700CFC18F /* EditDateViewController.swift in Sources */,
 				037FD7A126B1583600CFC18F /* EditEmotionViewController.swift in Sources */,
+				039206D126B2DBBB004D9259 /* JournalRecord.swift in Sources */,
 				037FD79D26B156ED00CFC18F /* AddJournalViewController.swift in Sources */,
 				037FD7A626B1D9B800CFC18F /* EmotionTableViewCell.swift in Sources */,
 			);

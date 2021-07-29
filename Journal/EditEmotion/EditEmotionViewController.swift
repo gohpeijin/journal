@@ -103,7 +103,7 @@ extension EditEmotionViewController: UITableViewDataSource{
         
         let selectedEmotion = resultList[indexPath.row]
         cell.labelEmotionName.text = selectedEmotion
-        cell.imageEmotion.image = UIImage(named: selectedEmotion)
+        cell.imageEmotion.image = UIImage(named: selectedEmotion.lowercased())
         return cell
     }
 }
