@@ -120,12 +120,23 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAY-5D-FUv">
-                                <rect key="frame" x="150" y="764" width="114" height="30"/>
-                                <color key="backgroundColor" red="0.049104692669999998" green="0.68065910529999996" blue="0.61040426569999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="150" y="764" width="114" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hN2-KM-47U"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Submit">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.049104692669999998" green="0.68065910529999996" blue="0.61040426569999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -150,6 +161,7 @@
                         <viewLayoutGuide key="safeArea" id="XMk-fO-rew"/>
                     </view>
                     <connections>
+                        <outlet property="buttonSubmit" destination="zAY-5D-FUv" id="wnC-6J-1cK"/>
                         <outlet property="imageEmotionSelected" destination="yr5-fg-Fe1" id="lwL-VM-vRz"/>
                         <outlet property="labelDate" destination="9zc-Od-IOS" id="6hS-gB-SFO"/>
                         <outlet property="labelEmotionSelected" destination="3fI-LH-KjY" id="sDw-2L-fXf"/>
@@ -220,13 +232,23 @@
                                     <constraint firstItem="dNP-CE-g7V" firstAttribute="top" secondItem="zhe-Tf-qHu" secondAttribute="top" constant="39" id="w6k-BJ-EV6"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjq-r4-4BH">
-                                <rect key="frame" x="150" y="634" width="114" height="30"/>
-                                <color key="backgroundColor" red="0.049104692669999998" green="0.68065910529999996" blue="0.61040426569999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjq-r4-4BH">
+                                <rect key="frame" x="150" y="617" width="114" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="YZI-ON-soO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Save">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.049104692669999998" green="0.68065910529999996" blue="0.61040426569999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="savePressed:" destination="bkX-Gn-i3d" eventType="touchUpInside" id="F8H-CW-r5V"/>
                                 </connections>
@@ -248,6 +270,7 @@
                         <viewLayoutGuide key="safeArea" id="OWm-8w-FhE"/>
                     </view>
                     <connections>
+                        <outlet property="buttonSave" destination="Xjq-r4-4BH" id="fKC-cP-YHF"/>
                         <outlet property="datePicker" destination="0rc-wb-raR" id="lSv-bw-hBV"/>
                     </connections>
                 </viewController>
@@ -267,10 +290,9 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <searchBar contentMode="redraw" barStyle="black" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IMq-HD-85h">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IMq-HD-85h">
                                 <rect key="frame" x="0.0" y="84" width="414" height="56"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="olC-ku-lpx" id="1Wu-mW-tiJ"/>
