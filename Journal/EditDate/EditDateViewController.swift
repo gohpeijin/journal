@@ -10,11 +10,15 @@ import UIKit
 
 class EditDateViewController: UIViewController {
     
+    @IBOutlet weak var buttonSave: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     let dateFormatter = DateFormatter()
     var dateSelected: String!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        buttonSave.layer.borderColor = UIColor.init(red: 32/255, green: 176/255, blue: 156/255, alpha: 1).cgColor // popup ok buttong effect
+        
         let now = Date()
         datePicker.maximumDate = now
         dateFormatter.dateFormat = "dd MMM yyyy"
@@ -25,6 +29,7 @@ class EditDateViewController: UIViewController {
         let addJournalVC = presentingViewController as! AddJournalViewController
         addJournalVC.labelDate.text = dateFormatter.string(from: datePicker.date)
         
+//        self.navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
     }
     
